@@ -1,0 +1,5 @@
+[package]
+
+name = "pbm"
+version = "0.0.1"
+authors = ["Alvaro Polo <apoloval@gmail.com>"]
