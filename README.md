@@ -1,6 +1,6 @@
 ## What's PBM?
 
-PBM is the *p*ack *b*it*m*ap tool, a command line utility to process a 
+PBM is the **p**ack **b**it**m**ap tool, a command line utility to process a 
 BMP file to generate a packed bitmap with the following properties:
 
 * Reduced payload. PBM format is a lightweight format. It includes almost 
