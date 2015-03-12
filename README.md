@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/apoloval/pbm.svg?branch=master)](https://travis-ci.org/apoloval/pbm)
+
 ## What's PBM?
 
 PBM is the **p**ack **b**it**m**ap tool, a command line utility to process a 
