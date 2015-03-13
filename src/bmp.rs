@@ -191,15 +191,15 @@ impl Bitmap {
     }
 
     fn read_pixels<R: io::Read>(
-            input: &mut R, rows: usize, cols: usize, bpp: u16) -> Result<Pixels, LoadError> {
+            input: &mut R, cols: usize, rows: usize, bpp: u16) -> Result<Pixels, LoadError> {
         match bpp {
-            4 => Bitmap::read_pixels_4bpp(input, rows, cols),
+            4 => Bitmap::read_pixels_4bpp(input, cols, rows),
             _ => Err(LoadError::UnsupportedBpp),
         }
     }
 
     fn read_pixels_4bpp<R: io::Read>(
-            input: &mut R, rows: usize, cols: usize) -> Result<Pixels, LoadError> {
+            input: &mut R, cols: usize, rows: usize) -> Result<Pixels, LoadError> {
         let rbytes = ((4 * cols + 31) / 32) * 4;
         let ebytes = rows * rbytes;
         let buff = try!(Bitmap::read_section(input, ebytes));
