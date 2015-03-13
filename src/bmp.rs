@@ -41,10 +41,10 @@ pub struct Rgbx(u8, u8, u8, u8);
 
 impl Rgbx {
 
-    fn from_u32(n: u32) -> Rgbx { Rgbx(
-        (n.to_be() >> 24) as u8,
-        (n.to_be() >> 16) as u8,
+    fn from_bgrx_u32(n: u32) -> Rgbx { Rgbx(
         (n.to_be() >> 8) as u8,
+        (n.to_be() >> 16) as u8,
+        (n.to_be() >> 24) as u8,
         (n.to_be() >> 0) as u8,
     )}
 }
@@ -185,7 +185,7 @@ impl Bitmap {
         let buff = try!(Bitmap::read_section(input, 4*ncolors));
         let mut table = ColorTable::new();
         for i in 0..ncolors {
-            table.push(Rgbx::from_u32(dword!(buff, 4*i)));
+            table.push(Rgbx::from_bgrx_u32(dword!(buff, 4*i)));
         }
         Ok(table)
     }
